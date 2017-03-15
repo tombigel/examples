@@ -16,7 +16,7 @@
 
       window.addEventListener('message',function(event) {
         if(event.origin !== domain) return;
-	      if (event.message === 'ready') {
+	      if (event.data === 'ready') {
 	      	frame.postMessage('hello to you too', domain)
 	      }
         out.innerHTML += `<br>${event.data}`
