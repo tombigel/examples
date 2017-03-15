@@ -10,7 +10,7 @@
     
     window.addEventListener('message',function(event) {
       console.log('got message')
-      if(event.origin !== origin) return;
+      //if(event.origin !== origin) return;
       out.innerHTML += `<br>${event.data}`
       event.source.postMessage('holla back youngin!',event.origin);
     },false);
