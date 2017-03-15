@@ -12,10 +12,13 @@
     <script>
       const frame = document.querySelector('#iframe').contentWindow;
       const domain = 'https://tombigel.github.io';
-      frame.postMessage('message', domain)
+      
 
       window.addEventListener('message',function(event) {
         if(event.origin !== origin) return;
+	      if (event,message === 'ready') {
+	      frame.postMessage('hello to you too', domain)
+	 }
         document.body.innerHTML += `<br>${event.data}`
       },false);
     </script>
