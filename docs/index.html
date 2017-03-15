@@ -7,19 +7,19 @@
     }
   </style>
   <body>
-  <iframe id="iframe" src="https://tombigel.github.io/examples/messageFrame.html"></iframe>
-	
+    <iframe id="iframe" src="https://tombigel.github.io/examples/messageFrame.html"></iframe>
+    <div id="out"></div>
     <script>
       const frame = document.querySelector('#iframe').contentWindow;
       const domain = 'https://tombigel.github.io';
-      
+      const out = document.querySelector('#out')
 
       window.addEventListener('message',function(event) {
         if(event.origin !== domain) return;
 	      if (event.message === 'ready') {
 	      	frame.postMessage('hello to you too', domain)
 	      }
-        document.body.innerHTML += `<br>${event.data}`
+        out.innerHTML += `<br>${event.data}`
       },false);
     </script>
   </body>
