@@ -1,1 +1,24 @@
+<html>
+<head></head>
+  <style>
+    #iframe{
+      width: 100%;
+      height: 50%;
+    }
+  </style>
+<body>
+  <iframe id="iframe" src="https://tombigel.github.io/examples/messageFrame.html"></iframe>
+	
+  <script>
+  const frame = document.querySelector('#iframe').contentWindow;
+const domain = 'http://tombigel.codepen.io'
+frame.postMessage('message', domain)
+
+window.addEventListener('message',function(event) {
+	if(event.origin !== origin) return;
+	document.body.innerHTML += `<br>${event.data}`
+},false);
+  </script>
+</body>
+</html>
 
