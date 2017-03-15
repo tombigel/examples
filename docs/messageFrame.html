@@ -1,0 +1,15 @@
+<html>
+<head></head>
+<body>
+<h1>hello world</h1>
+	<script>
+  window.addEventListener('message',function(event) {
+  console.log('got message')
+	if(event.origin !== origin) return;
+	document.body.innerHTML += `<br>${event.data}`
+	event.source.postMessage('holla back youngin!',event.origin);
+},false);
+
+  </script>
+</body>
+</html>
