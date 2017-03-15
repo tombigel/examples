@@ -11,7 +11,7 @@
 	
   <script>
   const frame = document.querySelector('#iframe').contentWindow;
-const domain = 'https://tombigel.codepen.io'
+const domain = 'https://tombigel.github.io'
 frame.postMessage('message', domain)
 
 window.addEventListener('message',function(event) {
